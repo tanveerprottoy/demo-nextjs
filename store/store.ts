@@ -1,16 +1,20 @@
 import thunk from "redux-thunk";
 import { createWrapper } from "next-redux-wrapper";
 import { configureStore } from "@reduxjs/toolkit";
-import basicReducer from "./reducers/basicReducer";
-import { combineReducers } from 'redux'
+import { combinedReducer } from "./combinedReducer";
+import { rootReducer } from "./rootReducer";
 
-const reducers = combineReducers({
-    basicReducer
-});
+/* const bindMiddleware = (middleware) => {
+    if(process.env.NODE_ENV !== 'production') {
+        const { composeWithDevTools } = require('redux-devtools-extension')
+        return composeWithDevTools(applyMiddleware(...middleware))
+    }
+    return applyMiddleware(...middleware)
+} */
 
 // creating store
 export const store = configureStore({
-    reducers,
+    reducer: rootReducer,
 });
 
 // assigning store to next wrapper
