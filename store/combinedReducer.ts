@@ -1,6 +1,8 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import count from "./count/reducer";
+import counter from "./count/reducer";
+import toggler from "./toggle/reducer";
 
 export const combinedReducer = combineReducers({
-    count
+    counter,
+    toggler,
 });

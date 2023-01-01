@@ -7,10 +7,13 @@ export const rootReducer = (state: any, action: any) => {
             ...state, // use previous state
             ...action.payload, // apply delta from hydration
         }
-        if(state.count.count) {
+        /* if(state.counter.count) {
             // preserve count value on client side navigation
-            nextState.count.count = state.count.count;
+            nextState.counter.count = state.counter.count;
         }
+        if(state.toggler.isSet) {
+            nextState.toggler.isSet = state.toggler.isSet;
+        } */
         return nextState;
     }
     else {

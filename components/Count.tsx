@@ -16,7 +16,7 @@ export const Count = ({ count, addCount, removeCount }: any) => {
 }
 
 const mapStateToProps = (state: any) => ({
-    count: state.count.count,
+    count: state.counter.count,
 })
 
 const mapDispatchToProps = (dispatch: any) => {
